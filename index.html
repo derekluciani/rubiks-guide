@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kid-Friendly Rubik’s Cube Solve Guide</title>
+  <link rel="stylesheet" href="assets/course.css">
+</head>
+<body>
+<main>
+<header>
+  <p class="badge">Lesson 2 · Solve the cube</p>
+  <h1>Rubik’s Cube Guide</h1>
+  <p class="subtitle">A slow, friendly 3x3 guide. Read it now. Practice when you have a cube.</p>
+</header>
+
+<section class="card win">
+  <h2>Big idea: every piece has a home</h2>
+  <p>The <b>center squares are the bosses</b>. They do not move to a new face. If the center is blue, that whole face’s home color is blue.</p>
+  <div class="colors" aria-label="cube colors"><span class="swatch white"></span><span class="swatch yellow"></span><span class="swatch red"></span><span class="swatch orange"></span><span class="swatch blue"></span><span class="swatch green"></span></div>
+</section>
+
+<section class="grid">
+  <div class="card"><h3>Center</h3><p>1 color. It tells the face’s home color.</p></div>
+  <div class="card"><h3>Edge</h3><p>2 colors. It lives between two centers.</p></div>
+  <div class="card"><h3>Corner</h3><p>3 colors. It lives between three centers.</p></div>
+</section>
+
+<section class="card">
+  <h2>Move words</h2>
+  <p>Letters tell you which side to turn. Turn the side <b>clockwise while looking right at that side</b>. A little mark <span class="algo">'</span> means “the other way” — counterclockwise while looking at that side. A <span class="algo">2</span> means “turn twice.”</p>
+  <p><span class="algo">R</span> right side &nbsp; <span class="algo">L</span> left side &nbsp; <span class="algo">U</span> top &nbsp; <span class="algo">D</span> bottom &nbsp; <span class="algo">F</span> front</p>
+  <p class="small">Example: <span class="algo">R U R' U'</span> means right clockwise, top clockwise, right counterclockwise, top counterclockwise. This guide does not need the back-side letter <span class="algo">B</span>. When this guide says “spell” or “helper,” it means a tiny move list to copy.</p>
+</section>
+
+<section>
+  <h2>The whole solve, in tiny wins</h2>
+
+  <div class="step">
+    <h3>1. Make a white daisy</h3>
+    <!--
+    <figure class="step-figure">
+      <img src="assets/01.webp" alt="Step 1: a white daisy around the yellow center of the cube">
+      <figcaption>Step 1 picture: the white daisy.</figcaption>
+    </figure>
+    -->
+    <p><b>Goal:</b> hold the cube with the yellow center on top. Put four white edge pieces around that yellow center, like flower petals.</p>
+    <p>Only edges count here: pieces with white plus one other color.</p>
+  </div>
+
+  <div class="step">
+    <h3>2. Turn the daisy into a white cross</h3>
+    <!--
+    <figure class="step-figure">
+      <img src="assets/02.webp" alt="Step 2: the white cross on the cube">
+      <figcaption>Step 2 picture: the white cross.</figcaption>
+    </figure>
+    -->
+    <ol class="checklist">
+      <li>Look at one white petal’s other color.</li>
+      <li>Turn the top until that color matches its center.</li>
+      <li>Turn that face two times to send the white petal down.</li>
+      <li>Do all four petals.</li>
+    </ol>
+    <p class="big">Stop when the bottom has a white plus sign.</p>
+  </div>
+
+  <div class="step">
+    <h3>3. Put in the white corners</h3>
+    <!--
+    <figure class="step-figure">
+      <img src="assets/03.webp" alt="Step 3: white corners placed to complete the white face">
+      <figcaption>Step 3 picture: the white corners.</figcaption>
+    </figure>
+    -->
+    <p>Keep white on the bottom. Find a white corner on top. Put it above the front-right-bottom home spot. Its side colors should match the front and right centers. Use the helper until it drops in:</p>
+    <p class="algo">R U R' U'</p>
+    <p class="small">If a white corner is trapped in the bottom wrong, use the helper once to pop it out, then place it above its home spot.</p>
+  </div>
+
+  <div class="step">
+    <h3>4. Fill the middle floor</h3>
+    <!--
+    <figure class="step-figure">
+      <img src="assets/04.webp" alt="Step 4: middle layer edges filled in around the cube">
+      <figcaption>Step 4 picture: the middle floor.</figcaption>
+    </figure>
+    -->
+    <p>Find a top edge with <b>no yellow</b>. Match its front color with the front center. Look at the color on top of that edge. If that color’s center is on the right, send right. If that color’s center is on the left, send left.</p>
+    <p><b>Send right:</b> <span class="algo">U R U' R' U' F' U F</span></p>
+    <p><b>Send left:</b> <span class="algo">U' L' U L U F U' F'</span></p>
+    <p class="small">If no top edge without yellow is ready, a middle-floor edge may be stuck in the wrong home. Use either send move to pop it up, then try again.</p>
+  </div>
+
+  <div class="step">
+    <h3>5. Make a yellow cross</h3>
+    <!--
+    <figure class="step-figure">
+      <img src="assets/05.webp" alt="Step 5: yellow cross on the top of the cube">
+      <figcaption>Step 5 picture: the yellow cross.</figcaption>
+    </figure>
+    -->
+    <p>Look only at yellow edge stickers on top. Use this spell until you see a yellow plus sign:</p>
+    <p class="algo">F R U R' U' F'</p>
+    <p class="small">Dot → little L → line → cross. If you see a line, hold it sideways like a road going left-right. If you see a little L, hold it so its yellow edge stickers point to the back and left before the spell.</p>
+  </div>
+
+  <div class="step">
+    <h3>6. Line up the yellow cross side colors</h3>
+    <!--
+    <figure class="step-figure">
+      <img src="assets/06.webp" alt="Step 6: yellow cross side colors lined up with their centers">
+      <figcaption>Step 6 picture: lined-up yellow cross sides.</figcaption>
+    </figure>
+    -->
+    <p>Turn the top until yellow-edge side colors match their centers. If all four match, you are done with this step. If two next-door edges match, hold the matching ones at the back and right. If two opposite edges match, do the spell once, then check again:</p>
+    <p class="algo">R U R' U R U2 R' U</p>
+    <p class="small">After each try, turn only the top to see which side colors match now.</p>
+  </div>
+
+  <div class="step">
+    <h3>7. Put yellow corners in their homes</h3>
+    <!--
+    <figure class="step-figure">
+      <img src="assets/07.webp" alt="Step 7: yellow corners moved into their correct homes">
+      <figcaption>Step 7 picture: yellow corners in their homes.</figcaption>
+    </figure>
+    -->
+    <p>A corner is “home” when its three colors match the three centers around it. It may be twisted; that is okay.</p>
+    <p>If one corner is home, hold it at the front-right-top. Then use:</p>
+    <p class="algo">U R U' L' U R' U' L</p>
+    <p class="small">After the spell, check again. If the corners are still not all in their homes, keep a home corner at front-right-top and do the spell again. You may need it twice. If no corner is home, do the spell once, then check again.</p>
+  </div>
+
+  <div class="step">
+    <h3>8. Twist yellow corners to finish</h3>
+    <!--
+    <figure class="step-figure">
+      <img src="assets/08.webp" alt="Step 8: solved Rubik’s Cube after twisting the final yellow corners">
+      <figcaption>Step 8 picture: the finished cube.</figcaption>
+    </figure>
+    -->
+    <p>Put an unsolved yellow corner at the front-right-top. Repeat this until yellow points up:</p>
+    <p class="algo">R' D' R D</p>
+    <p>Then turn only the top <span class="algo">U</span> to bring the next unsolved corner to front-right-top. Keep going.</p>
+    <p class="warn card"><b>Do not panic:</b> the bottom may look broken while you twist corners. It comes back when all corners are done. Do not rotate the whole cube between corners. Only turn the top layer with <span class="algo">U</span>.</p>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Practice rule</h2>
+  <p>Do not try to memorize the whole page. Use one tiny win at a time. Point at the step, do it, then move on.</p>
+  <p>This guide mainly follows the <a href="https://ruwix.com/the-rubiks-cube/how-to-solve-the-rubiks-cube-beginners-method/">Ruwix Beginner’s Method</a>. <a href="https://www.rubiks.com/solution-guides">Rubik’s official solution guides</a> show another beginner-friendly version.</p>
+</section>
+
+<nav class="nav"><a href="lessons/0001-cube-language-and-first-goal.html">Back to Lesson 1</a></nav>
+</main>
+</body>
+</html>
