@@ -75,11 +75,22 @@ a {
 .step-figure img {
     display: block;
     width: 100%;
-    max-width: 520px;
+    max-width: 680px;
     height: auto;
     border: 2px solid var(--line);
     border-radius: 16px;
     background: white;
+}
+.moves-figure.is-fixed {
+    height: var(--moves-height);
+}
+.moves-figure.is-fixed img {
+    position: fixed;
+    top: 0;
+    left: var(--moves-left);
+    z-index: 10;
+    width: var(--moves-width);
+    max-width: none;
 }
 .step-figure figcaption {
     font-size: 0.9rem;

@@ -28,9 +28,12 @@
 
 <section class="card">
   <h2>Move words</h2>
-  <p>Letters tell you which side to turn. Turn the side <b>clockwise while looking right at that side</b>. A little mark <span class="algo">'</span> means “the other way” — counterclockwise while looking at that side. A <span class="algo">2</span> means “turn twice.”</p>
+  <figure class="step-figure moves-figure">
+    <img src="assets/moves-diagram.webp" alt="Diagram showing Rubik’s Cube move letters">
+  </figure>
+  <p>A little mark <span class="algo">'</span> means “the other way” — counterclockwise while looking at that side. A <span class="algo">2</span> means “turn twice.”</p>
   <p><span class="algo">R</span> right side &nbsp; <span class="algo">L</span> left side &nbsp; <span class="algo">U</span> top &nbsp; <span class="algo">D</span> bottom &nbsp; <span class="algo">F</span> front</p>
-  <p class="small">Example: <span class="algo">R U R' U'</span> means right clockwise, top clockwise, right counterclockwise, top counterclockwise. This guide does not need the back-side letter <span class="algo">B</span>. When this guide says “spell” or “helper,” it means a tiny move list to copy.</p>
+  <p class="small">Example: <span class="algo">R U R' U'</span> means right clockwise, top clockwise, right counterclockwise, top counterclockwise. This guide does not need the back-side letter <span class="algo">B</span>. A short move list like this is called an algorithm.</p>
 </section>
 
 <section>
@@ -73,9 +76,9 @@
       <figcaption>Step 3 picture: the white corners.</figcaption>
     </figure>
     -->
-    <p>Keep white on the bottom. Find a white corner on top. Put it above the front-right-bottom home spot. Its side colors should match the front and right centers. Use the helper until it drops in:</p>
+    <p>Keep white on the bottom. Find a white corner on top. Put it above the front-right-bottom home spot. Its side colors should match the front and right centers. Use the algorithm until it drops in:</p>
     <p class="algo">R U R' U'</p>
-    <p class="small">If a white corner is trapped in the bottom wrong, use the helper once to pop it out, then place it above its home spot.</p>
+    <p class="small">If a white corner is trapped in the bottom wrong, use the algorithm once to pop it out, then place it above its home spot.</p>
   </div>
 
   <div class="step">
@@ -100,9 +103,9 @@
       <figcaption>Step 5 picture: the yellow cross.</figcaption>
     </figure>
     -->
-    <p>Look only at yellow edge stickers on top. Use this spell until you see a yellow plus sign:</p>
+    <p>Look only at yellow edge stickers on top. Use this algorithm until you see a yellow plus sign:</p>
     <p class="algo">F R U R' U' F'</p>
-    <p class="small">Dot → little L → line → cross. If you see a line, hold it sideways like a road going left-right. If you see a little L, hold it so its yellow edge stickers point to the back and left before the spell.</p>
+    <p class="small">Dot → little L → line → cross. If you see a line, hold it sideways like a road going left-right. If you see a little L, hold it so its yellow edge stickers point to the back and left before the algorithm.</p>
   </div>
 
   <div class="step">
@@ -113,7 +116,7 @@
       <figcaption>Step 6 picture: lined-up yellow cross sides.</figcaption>
     </figure>
     -->
-    <p>Turn the top until yellow-edge side colors match their centers. If all four match, you are done with this step. If two next-door edges match, hold the matching ones at the back and right. If two opposite edges match, do the spell once, then check again:</p>
+    <p>Turn the top until yellow-edge side colors match their centers. If all four match, you are done with this step. If two next-door edges match, hold the matching ones at the back and right. If two opposite edges match, do the algorithm once, then check again:</p>
     <p class="algo">R U R' U R U2 R' U</p>
     <p class="small">After each try, turn only the top to see which side colors match now.</p>
   </div>
@@ -129,7 +132,7 @@
     <p>A corner is “home” when its three colors match the three centers around it. It may be twisted; that is okay.</p>
     <p>If one corner is home, hold it at the front-right-top. Then use:</p>
     <p class="algo">U R U' L' U R' U' L</p>
-    <p class="small">After the spell, check again. If the corners are still not all in their homes, keep a home corner at front-right-top and do the spell again. You may need it twice. If no corner is home, do the spell once, then check again.</p>
+    <p class="small">After the algorithm, check again. If the corners are still not all in their homes, keep a home corner at front-right-top and do the algorithm again. You may need it twice. If no corner is home, do the algorithm once, then check again.</p>
   </div>
 
   <div class="step">
@@ -155,5 +158,47 @@
 
 <nav class="nav"><a href="lessons/0001-cube-language-and-first-goal.html">Back to Lesson 1</a></nav>
 </main>
+<script>
+  (() => {
+    const figure = document.querySelector('.moves-figure');
+    const image = figure?.querySelector('img');
+    if (!figure || !image) return;
+
+    let startTop = 0;
+    let stuck = false;
+
+    const measure = () => {
+      const rect = image.getBoundingClientRect();
+      startTop = rect.top + window.scrollY;
+      figure.style.setProperty('--moves-left', `${rect.left}px`);
+      figure.style.setProperty('--moves-width', `${rect.width}px`);
+      figure.style.setProperty('--moves-height', `${rect.height}px`);
+    };
+
+    const update = () => {
+      if (!stuck) measure();
+
+      if (window.scrollY >= startTop && !stuck) {
+        stuck = true;
+        figure.classList.add('is-fixed');
+      } else if (window.scrollY < startTop && stuck) {
+        stuck = false;
+        figure.classList.remove('is-fixed');
+        measure();
+      }
+    };
+
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', () => {
+      stuck = false;
+      figure.classList.remove('is-fixed');
+      measure();
+      update();
+    });
+    image.addEventListener('load', measure);
+    measure();
+    update();
+  })();
+</script>
 </body>
 </html>
