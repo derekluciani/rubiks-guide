@@ -89,10 +89,17 @@
       <figcaption>Step 4 picture: the middle floor.</figcaption>
     </figure>
     -->
-    <p>Find a top edge with <b>no yellow</b>. Match its front color with the front center. Look at the color on top of that edge. If that color’s center is on the right, send right. If that color’s center is on the left, send left.</p>
+    <p>Find an edge piece on the top layer that does <b>not</b> have yellow on it. This piece belongs in the middle layer.</p>
+    <p>Turn only the top layer until the color on the front of that edge matches the front center color.</p>
+    <p>Now look at the color on the top of that edge piece:</p>
+    <ul class="checklist">
+      <li>If that color matches the center on the <b>right</b> side, use <b>Send right</b>.</li>
+      <li>If that color matches the center on the <b>left</b> side, use <b>Send left</b>.</li>
+    </ul>
+    <p>Keep doing this until all four middle-layer edge pieces are in the correct places.</p>
     <p><b>Send right:</b> <span class="algo">U R U' R' U' F' U F</span></p>
     <p><b>Send left:</b> <span class="algo">U' L' U L U F U' F'</span></p>
-    <p class="small">If no top edge without yellow is ready, a middle-floor edge may be stuck in the wrong home. Use either send move to pop it up, then try again.</p>
+    <p class="small">If every top edge has yellow, but the middle layer is not finished, one middle edge is probably stuck in the wrong place. Use either algorithm to move it up to the top, then solve it normally.</p>
   </div>
 
   <div class="step">
