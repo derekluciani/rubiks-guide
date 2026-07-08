@@ -23,7 +23,7 @@ body {
     font-size: 18px;
 }
 main {
-    max-width: 920px;
+    max-width: 768px;
     margin: 0 auto;
     padding: 32px 20px 64px;
 }

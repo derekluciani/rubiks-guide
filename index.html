@@ -21,9 +21,33 @@
 </section>
 
 <section class="grid">
-  <div class="card"><h3>Center</h3><p>1 color. It tells the face’s home color.</p></div>
-  <div class="card"><h3>Edge</h3><p>2 colors. It lives between two centers.</p></div>
-  <div class="card"><h3>Corner</h3><p>3 colors. It lives between three centers.</p></div>
+  <div class="card">
+      <h3>Center</h3>
+      <p>1 color. It tells the face’s home color.</p>
+      <div class="face" aria-label="white daisy around yellow center">
+        <span class="sq muted"></span><span class="sq muted"></span><span class="sq muted"></span>
+        <span class="sq muted"></span><span class="sq white"></span><span class="sq muted"></span>
+        <span class="sq muted"></span><span class="sq muted"></span><span class="sq muted"></span>
+      </div>
+  </div>
+  <div class="card">
+      <h3>Edge</h3>
+      <p>2 colors. It lives between two centers.</p>
+      <div class="face" aria-label="white daisy around yellow center">
+        <span class="sq muted"></span><span class="sq white"></span><span class="sq muted"></span>
+        <span class="sq white"></span><span class="sq muted"></span><span class="sq white"></span>
+        <span class="sq muted"></span><span class="sq white"></span><span class="sq muted"></span>
+      </div>
+  </div>
+  <div class="card">
+      <h3>Corner</h3>
+      <p>3 colors. It lives between three centers.</p>
+      <div class="face" aria-label="white daisy around yellow center">
+        <span class="sq white"></span><span class="sq muted"></span><span class="sq white"></span>
+        <span class="sq muted"></span><span class="sq muted"></span><span class="sq muted"></span>
+        <span class="sq white"></span><span class="sq muted"></span><span class="sq white"></span>
+      </div>
+  </div>
 </section>
 
 <section class="card">
@@ -31,7 +55,8 @@
   <figure class="step-figure moves-figure">
     <img src="assets/moves-diagram.webp" alt="Diagram showing Rubik’s Cube move letters">
   </figure>
-  <p>A little mark <span class="algo">'</span> means “the other way” — counterclockwise while looking at that side. A <span class="algo">2</span> means “turn twice.”</p>
+  <p>A little mark <span class="algo">'</span> means “the other way” — counterclockwise while looking at that side.</p>
+  <p>A <span class="algo">2</span> means “turn twice.”</p>
   <p><span class="algo">R</span> right side &nbsp; <span class="algo">L</span> left side &nbsp; <span class="algo">U</span> top &nbsp; <span class="algo">D</span> bottom &nbsp; <span class="algo">F</span> front</p>
   <p class="small">Example: <span class="algo">R U R' U'</span> means right clockwise, top clockwise, right counterclockwise, top counterclockwise. This guide does not need the back-side letter <span class="algo">B</span>. A short move list like this is called an algorithm.</p>
 </section>
@@ -49,6 +74,11 @@
     -->
     <p><b>Goal:</b> hold the cube with the yellow center on top. Put four white edge pieces around that yellow center, like flower petals.</p>
     <p>Only edges count here: pieces with white plus one other color.</p>
+    <div class="face" aria-label="white daisy around yellow center">
+      <span class="sq muted"></span><span class="sq white"></span><span class="sq muted"></span>
+      <span class="sq white"></span><span class="sq yellow"></span><span class="sq white"></span>
+      <span class="sq muted"></span><span class="sq white"></span><span class="sq muted"></span>
+    </div>
   </div>
 
   <div class="step">
@@ -60,12 +90,13 @@
     </figure>
     -->
     <ol class="checklist">
-      <li>Look at one white petal’s other color.</li>
-      <li>Turn the top until that color matches its center.</li>
-      <li>Turn that face two times to send the white petal down.</li>
-      <li>Do all four petals.</li>
+      <li>Keep the yellow center on top. Pick one white petal in the daisy.</li>
+      <li>Look at the petal’s other color. For example, a white-blue edge has a blue sticker too.</li>
+      <li>Rotate only the top layer clockwise or counterclockwise until that other color lines up with the same color center. For example, move the white-blue petal to the blue side of the cube, so its blue sticker lines up with the blue center on that side.</li>
+      <li>Face that matching center. Rotate that face clockwise two quarter-turns. This is a 180-degree move, so counterclockwise two quarter-turns also works. This moves the white petal from the top face down to the bottom face.</li>
+      <li>Repeat these steps for each of the four white petals.</li>
     </ol>
-    <p class="big">Stop when the bottom has a white plus sign.</p>
+    <p class="big">Stop when the bottom has a white plus sign, and the side color of each white edge matches its center.</p>
   </div>
 
   <div class="step">
@@ -76,9 +107,9 @@
       <figcaption>Step 3 picture: the white corners.</figcaption>
     </figure>
     -->
-    <p>Keep white on the bottom. Find a white corner on top. Put it above the front-right-bottom home spot. Its side colors should match the front and right centers. Use the algorithm until it drops in:</p>
+    <p>Keep white on the bottom. Find a white corner on the top layer. Look at its two non-white colors. Turn the top layer clockwise or counterclockwise until that corner is in the top-front-right position, directly above the place where it belongs. The corner is in the right spot when its two non-white colors match the front center and the right center. Use the algorithm until the corner drops into that bottom-front-right spot:</p>
     <p class="algo">R U R' U'</p>
-    <p class="small">If a white corner is trapped in the bottom wrong, use the algorithm once to pop it out, then place it above its home spot.</p>
+    <p class="small">If a white corner is in the bottom layer but not solved, use the algorithm once to move it up to the top layer. Then line it up above its correct corner spot and solve it normally.</p>
   </div>
 
   <div class="step">
@@ -96,7 +127,7 @@
       <li>If that color matches the center on the <b>right</b> side, use <b>Send right</b>.</li>
       <li>If that color matches the center on the <b>left</b> side, use <b>Send left</b>.</li>
     </ul>
-    <p>Keep doing this until all four middle-layer edge pieces are in the correct places.</p>
+    <p>Keep doing this until the middle row on each side face is solved. On every side face, the center sticker and the two edge stickers next to it should all be the same color. Each middle-layer edge should sit between the two centers that match its colors.</p>
     <p><b>Send right:</b> <span class="algo">U R U' R' U' F' U F</span></p>
     <p><b>Send left:</b> <span class="algo">U' L' U L U F U' F'</span></p>
     <p class="small">If every top edge has yellow, but the middle layer is not finished, one middle edge is probably stuck in the wrong place. Use either algorithm to move it up to the top, then solve it normally.</p>
